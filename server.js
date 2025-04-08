@@ -3,6 +3,8 @@ import { WebSocketServer } from "ws";
 import { createClient } from "redis";
 import dotenv from "dotenv";
 
+const port = process.env.PORT || 5006
+
 // Load environment variables from .env file
 dotenv.config();
 
@@ -64,4 +66,4 @@ wss.on("connection", async (ws, req) => {
     });
 });
 
-server.listen(process.env.PORT || 9001, () => console.log(`🚀 WebSocket server running on port ${PORT}`));
+server.listen(port, () => console.log(`🚀 WebSocket server running on port ${port}`));
